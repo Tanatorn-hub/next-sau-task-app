@@ -22,6 +22,7 @@ export default function Page() {
   // สร้างตัวแปรทั้งหมด
   const [tasks, setTasks] = useState<Task[]>([]);
 
+  // สร้าง function เพื่อดึงข้อมูล
   useEffect(() => {
     const fetchTasks = async () => {
       const { data, error } = await supabase
@@ -126,7 +127,7 @@ export default function Page() {
                   <td className="border p-2">
                     <Link
                       className="text-green-500 mr-5 hover:text-green-700"
-                      href="#"
+                      href={`/updatetask/${task.id}`}
                     >
                       แก้ไข
                     </Link>
